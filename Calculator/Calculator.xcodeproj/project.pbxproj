@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		64462F752513AED900AB103F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64462F732513AED900AB103F /* Main.storyboard */; };
 		64462F772513AEDF00AB103F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64462F762513AEDF00AB103F /* Assets.xcassets */; };
 		64462F7A2513AEDF00AB103F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64462F782513AEDF00AB103F /* LaunchScreen.storyboard */; };
+		64462F832513C2B400AB103F /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64462F822513C2B400AB103F /* Processor.swift */; };
+		64462F852513C45200AB103F /* ProcessorOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64462F842513C45200AB103F /* ProcessorOperator.swift */; };
+		64462F882513D42D00AB103F /* MathParser in Frameworks */ = {isa = PBXBuildFile; productRef = 64462F872513D42D00AB103F /* MathParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		64462F762513AEDF00AB103F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64462F792513AEDF00AB103F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64462F7B2513AEDF00AB103F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64462F822513C2B400AB103F /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		64462F842513C45200AB103F /* ProcessorOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorOperator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64462F882513D42D00AB103F /* MathParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +62,25 @@
 		64462F6C2513AED900AB103F /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				64462F6D2513AED900AB103F /* AppDelegate.swift */,
-				64462F6F2513AED900AB103F /* SceneDelegate.swift */,
-				64462F712513AED900AB103F /* ViewController.swift */,
 				64462F732513AED900AB103F /* Main.storyboard */,
-				64462F762513AEDF00AB103F /* Assets.xcassets */,
-				64462F782513AEDF00AB103F /* LaunchScreen.storyboard */,
+				64462F712513AED900AB103F /* ViewController.swift */,
+				64462F822513C2B400AB103F /* Processor.swift */,
+				64462F842513C45200AB103F /* ProcessorOperator.swift */,
+				64462F812513B33800AB103F /* Files */,
 				64462F7B2513AEDF00AB103F /* Info.plist */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		64462F812513B33800AB103F /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				64462F762513AEDF00AB103F /* Assets.xcassets */,
+				64462F782513AEDF00AB103F /* LaunchScreen.storyboard */,
+				64462F6D2513AED900AB103F /* AppDelegate.swift */,
+				64462F6F2513AED900AB103F /* SceneDelegate.swift */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = Calculator;
+			packageProductDependencies = (
+				64462F872513D42D00AB103F /* MathParser */,
+			);
 			productName = Calculator;
 			productReference = 64462F6A2513AED900AB103F /* Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 64462F612513AED900AB103F;
+			packageReferences = (
+				64462F862513D42D00AB103F /* XCRemoteSwiftPackageReference "DDMathParser" */,
+			);
 			productRefGroup = 64462F6B2513AED900AB103F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +162,8 @@
 			files = (
 				64462F722513AED900AB103F /* ViewController.swift in Sources */,
 				64462F6E2513AED900AB103F /* AppDelegate.swift in Sources */,
+				64462F852513C45200AB103F /* ProcessorOperator.swift in Sources */,
+				64462F832513C2B400AB103F /* Processor.swift in Sources */,
 				64462F702513AED900AB103F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64462F862513D42D00AB103F /* XCRemoteSwiftPackageReference "DDMathParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davedelong/DDMathParser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64462F872513D42D00AB103F /* MathParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64462F862513D42D00AB103F /* XCRemoteSwiftPackageReference "DDMathParser" */;
+			productName = MathParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 64462F622513AED900AB103F /* Project object */;
 }

@@ -12,29 +12,6 @@ import MathParser
 struct Processor {
     
     var exitString = ""
-    var lastOperator: ProcessorOperator? {
-        var exitString = self.exitString
-        while exitString.hasSuffix("(") {
-            exitString.removeLast()
-        }
-        return ProcessorOperator.allCases.first { processorOperator in
-            exitString.hasSuffix(processorOperator.rawValue)
-        }
-        
-    }
-    var lastNumber: String? { //может не быть числа на конце
-        var exitString = self.exitString
-        var lastNumber = ""
-        while let last = exitString.last, last.isNumber || last == "." {
-            lastNumber.insert(last, at: lastNumber.startIndex)
-            exitString.removeLast()
-        }
-        if lastNumber.isEmpty {
-            return nil
-        } else {
-            return lastNumber
-        }
-    }
     
     mutating func appendDigit (_ digit: String) {
         if !exitString.hasSuffix(")"), lastOperator?.hasPostfixOperand ?? true {
@@ -51,11 +28,11 @@ struct Processor {
             }
         }
         if processorOperator.hasPrefixOperand {
-            if lastNumber != nil || exitString.hasSuffix(")") || !(lastOperator?.hasPostfixOperand ?? false) {
+            if lastNumber != nil || exitString.hasSuffix(")") || !(lastOperator?.hasPostfixOperand ?? true) {
                 add()
             }
         } else {
-            if !exitString.hasSuffix(")"), lastOperator?.hasPostfixOperand ?? false {//
+            if !exitString.hasSuffix(")"), lastNumber == nil, lastOperator?.hasPostfixOperand ?? true {//
                 add()
             }
         }
@@ -66,9 +43,9 @@ struct Processor {
             exitString = exitString + "("
         }
     }
-    
+
     mutating func addRightBracket() {
-        if lastNumber != nil || exitString.hasSuffix(")"), exitString.countAll("(") > exitString.countAll(")") {
+        if lastNumber != nil || exitString.hasSuffix(")") || !(lastOperator?.hasPostfixOperand ?? true), exitString.countAll("(") > exitString.countAll(")") {
             exitString = exitString + ")"
         }
     }
@@ -103,6 +80,30 @@ struct Processor {
             formatter.minimumFractionDigits = 0
             formatter.maximumFractionDigits = 4
             exitString = formatter.string(from: NSNumber(value: result))!
+        }
+    }
+    
+    var lastOperator: ProcessorOperator? {
+        var exitString = self.exitString
+        while exitString.hasSuffix("(") {
+            exitString.removeLast()
+        }
+        return ProcessorOperator.allCases.first { processorOperator in
+            exitString.hasSuffix(processorOperator.rawValue)
+        }
+        
+    }
+    var lastNumber: String? { //может не быть числа на конце
+        var exitString = self.exitString
+        var lastNumber = ""
+        while let last = exitString.last, last.isNumber || last == "." {
+            lastNumber.insert(last, at: lastNumber.startIndex)
+            exitString.removeLast()
+        }
+        if lastNumber.isEmpty {
+            return nil
+        } else {
+            return lastNumber
         }
     }
 }

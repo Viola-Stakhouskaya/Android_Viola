@@ -15,9 +15,10 @@ enum ProcessorOperator: String , CaseIterable {
     case divide = "÷"
     case multiply = "×"
     case percentage = "﹪"
-    case root = " √"
+    case root = "√"
     case sin = "sin"
     case cos = "cos"
+    case cubicRoot = "∛"
     
     var hasPostfixOperand: Bool {
         switch self {
@@ -32,7 +33,7 @@ enum ProcessorOperator: String , CaseIterable {
         switch self {
         case .plus, .minus, .multiply, .divide, .percentage:
             return true
-        case .root, .sin, .cos:
+        case .root, .cubicRoot, .sin, .cos:
             return false
         }
     }

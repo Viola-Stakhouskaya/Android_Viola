@@ -43,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6428B4D12514EF6200F1F5DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64462F822513C2B400AB103F /* Processor.swift */,
+				64462F842513C45200AB103F /* ProcessorOperator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6428B4D22514EF9300F1F5DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64462F712513AED900AB103F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		64462F612513AED900AB103F = {
 			isa = PBXGroup;
 			children = (
@@ -63,9 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				64462F732513AED900AB103F /* Main.storyboard */,
-				64462F712513AED900AB103F /* ViewController.swift */,
-				64462F822513C2B400AB103F /* Processor.swift */,
-				64462F842513C45200AB103F /* ProcessorOperator.swift */,
+				6428B4D22514EF9300F1F5DA /* Controller */,
+				6428B4D12514EF6200F1F5DA /* Model */,
 				64462F812513B33800AB103F /* Files */,
 				64462F7B2513AEDF00AB103F /* Info.plist */,
 			);

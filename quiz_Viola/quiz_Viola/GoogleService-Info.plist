@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>138190005204-r4ip738tr7146ag1dpk9mvr5j4kgtbko.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.138190005204-r4ip738tr7146ag1dpk9mvr5j4kgtbko</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDD8ey6uHU3H5PSm81lXrX9m37_i0-gv7U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>138190005204</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.violastakhouskaya.quiz-Viola</string>
+	<key>PROJECT_ID</key>
+	<string>quiz-efc79</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quiz-efc79.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:138190005204:ios:5e21513ea22b41ef626c41</string>
+	<key>DATABASE_URL</key>
+	<string>https://quiz-efc79.firebaseio.com</string>
+</dict>
+</plist>

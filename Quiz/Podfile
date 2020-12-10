@@ -1,0 +1,15 @@
+platform :ios, '13.0'
+
+target 'Quiz' do
+  use_frameworks!
+  
+  pod 'Moya'
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  
+  pod 'Google-Mobile-Ads-SDK'
+
+end

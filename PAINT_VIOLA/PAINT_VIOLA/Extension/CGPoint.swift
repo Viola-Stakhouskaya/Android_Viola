@@ -7,7 +7,7 @@
 
 import CoreGraphics
 
-extension CGPoint {
+extension CGPoint {//обозначает точку на экране
     func distance(to point: CGPoint) -> CGFloat {
         let xDist = x - point.x
         let yDist = y - point.y

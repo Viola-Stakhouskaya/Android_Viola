@@ -5,7 +5,7 @@
 //  Created by Viola Stakhouskaya on 11/11/19.
 //  Copyright © 2019 Lightroom Filters. All rights reserved.
 //
-
+//задается маска для вью, маска - это описание, где будет прозрачно, а гле нет
 import UIKit
 
 @IBDesignable

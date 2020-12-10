@@ -79,7 +79,7 @@
 		64462F6C2513AED900AB103F /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				64462F732513AED900AB103F /* Main.storyboard */,
+				646D0E832582A02600F220CD /* View */,
 				6428B4D22514EF9300F1F5DA /* Controller */,
 				6428B4D12514EF6200F1F5DA /* Model */,
 				64462F812513B33800AB103F /* Files */,
@@ -97,6 +97,14 @@
 				64462F6F2513AED900AB103F /* SceneDelegate.swift */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		646D0E832582A02600F220CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64462F732513AED900AB103F /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

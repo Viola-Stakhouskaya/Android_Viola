@@ -7,8 +7,12 @@
 //
 
 import SpriteKit
+import UIKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
+    
+    static let gameDidEndNotification = Notification.Name("gameDidEndNotification")
+    
     let verticalPipeGap = 150.0
     
     var bird:SKSpriteNode!
@@ -246,6 +250,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                         self.backgroundColor = self.skyColor
                         }), SKAction.wait(forDuration: TimeInterval(0.05))]), count:4), SKAction.run({
                             self.canRestart = true
+                            NotificationCenter.default.post(name: Self.gameDidEndNotification, object: nil)
                             })]), withKey: "flash")
             }
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import GoogleMobileAds
 
 extension SKNode {
     class func unarchiveFromFile(_ file : String) -> SKNode? {
@@ -31,8 +32,16 @@ extension SKNode {
 
 class GameViewController: UIViewController {
 
+    var interstitial: GADInterstitial!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(gameDidEnd), name: GameScene.gameDidEndNotification, object: nil)
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
@@ -47,6 +56,15 @@ class GameViewController: UIViewController {
             scene.scaleMode = .aspectFill
             
             skView.presentScene(scene)
+        }
+    }
+    
+    @objc func gameDidEnd() {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+            let request = GADRequest()
+            interstitial.load(request)
         }
     }
 
